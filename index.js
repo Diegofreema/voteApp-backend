@@ -10,7 +10,11 @@ const errorHandler = require('./middleware/errorMiddleware');
 const cookieParser = require('cookie-parser');
 const protect = require('./middleware/protect');
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ['http://localhost:3000', 'https://e-vote-app.onrender.com'],
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
