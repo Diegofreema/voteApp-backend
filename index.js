@@ -10,12 +10,12 @@ const errorHandler = require('./middleware/errorMiddleware');
 const cookieParser = require('cookie-parser');
 const protect = require('./middleware/protect');
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://e-vote-app.vercel.app');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PUT');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
+const corsOptions = {
+  origin: '*',
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
