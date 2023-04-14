@@ -10,13 +10,20 @@ const errorHandler = require('./middleware/errorMiddleware');
 const cookieParser = require('cookie-parser');
 const protect = require('./middleware/protect');
 
-const corsOptions = {
-  origin: '*',
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-  methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: '*',
+//   credentials: true, //access-control-allow-credentials:true
+//   optionSuccessStatus: 200,
+//   methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
+// };
+app.use(
+  cors({
+    origin: ['http:http://localhost:3000', 'https://e-vote-app.vercel.app'],
+    credentials: true,
+    preflightContinue: true,
+    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
