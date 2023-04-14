@@ -11,7 +11,7 @@ const cookieParser = require('cookie-parser');
 const protect = require('./middleware/protect');
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://example.com');
+  res.setHeader('Access-Control-Allow-Origin', 'https://e-vote-app.vercel.app');
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PUT');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
