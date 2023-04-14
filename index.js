@@ -13,6 +13,7 @@ const protect = require('./middleware/protect');
 app.use(
   cors({
     origin: ['http://localhost:3000', 'https://e-vote-app.onrender.com'],
+    credentials: true,
   })
 );
 app.use(express.json());
