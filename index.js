@@ -18,7 +18,7 @@ const protect = require('./middleware/protect');
 // };
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://e-vote-app.vercel.app/'],
+    origin: ['http://localhost:3000', 'https://e-vote-app.vercel.app'],
     credentials: true,
     preflightContinue: true,
     methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
