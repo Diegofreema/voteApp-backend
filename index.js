@@ -12,7 +12,11 @@ const protect = require('./middleware/protect');
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://e-vote-app.onrender.com'],
+    origin: [
+      'http://localhost:3000',
+      'https://e-vote-app.onrender.com',
+      'https://e-vote-app.vercel.app/',
+    ],
     credentials: true,
   })
 );
