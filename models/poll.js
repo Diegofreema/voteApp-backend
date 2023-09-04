@@ -23,7 +23,7 @@ const pollSchema = new mongoose.Schema(
     },
     expiresIn: {
       type: Date,
-      default: new Date(currentDate.getTime() + 60000),
+      default: new Date(currentDate.getTime() + 120000),
     },
   },
   {
